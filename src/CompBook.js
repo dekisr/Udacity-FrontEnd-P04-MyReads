@@ -14,12 +14,13 @@ class CompBook extends Component {
   overlayMenu(id, shelf) {
     this.clear()
 
-    const bookDiv = document.getElementById(id)
-    bookDiv.style.display === 'grid' ?
-    (bookDiv.style.display = 'none') :
-    (bookDiv.style.display = 'grid')
+    const bookOverlay = document.getElementById(id)
+    bookOverlay.style.display = 'grid'
+    // bookDiv.style.display === 'grid' ?
+    // (bookDiv.style.display = 'none') :
+    // (bookDiv.style.display = 'grid')
     
-    const shelfButtons = bookDiv.querySelectorAll('.shelfButton')
+    const shelfButtons = bookOverlay.querySelectorAll('.shelfButton')
     switch(shelf) {
       case 'currentlyReading':
       shelfButtons[0].style.display = 'none'
@@ -65,7 +66,7 @@ class CompBook extends Component {
         {myReads.filter((item) => item.book.shelf === shelf)
         .map((item, index) => (
           <li key={index}>
-            <img src={item.book.imageLinks.smallThumbnail} alt={item.book.title} className="bookImage"/>
+            <img src={item.book.imageLinks.thumbnail} alt={item.book.title} className="bookImage"/>
             <div>
               <span className="bookTitle">{item.book.title}</span>
               <span>{item.book.authors}</span>

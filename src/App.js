@@ -9,19 +9,15 @@ class App extends Component {
     myReads: []
   }
   componentDidMount() {
-    if(!localStorage.getItem('myReadsLocal')) {
-      this.myBooks()
-    } else {
-      this.setState({
+    (!localStorage.getItem('myReadsLocal')) ?
+    this.myBooks() :
+    this.setState({
         myReads: JSON.parse(localStorage.getItem('myReadsLocal'))
-      })
-      // BooksAPI.search('make').then((resp) => console.log(resp))
-    }
+    })
   }
   componentDidUpdate(prevState) {
-    if(this.state.myReads !== prevState.myReads) {
-      localStorage.setItem('myReadsLocal', JSON.stringify(this.state.myReads))
-    }
+    (this.state.myReads !== prevState.myReads) &&
+    localStorage.setItem('myReadsLocal', JSON.stringify(this.state.myReads))
   }
   myBooks() {
     const currentlyReading = ['mDzDBQAAQBAJ', '_hIWb6Z8mX0C', 'luD1Bpc1fmsC']
