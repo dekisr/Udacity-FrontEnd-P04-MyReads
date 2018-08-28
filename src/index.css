@@ -32,8 +32,13 @@ header {
   min-width: 320px;
   font-family: 'Lobster', cursive;
 }
+header.headerSearch {
+  background-image: none;
+}
 #hero,
-main, footer {
+#heroSearch,
+main,
+footer {
   max-width: 1200px;
   min-width: 320px;
   margin: 0 auto;
@@ -41,7 +46,8 @@ main, footer {
 footer {
   padding: 3rem;
 }
-#hero {
+#hero,
+#heroSearch {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 200px;
@@ -50,8 +56,37 @@ footer {
   justify-items: center;
   align-items: center;
 }
+#heroSearch {
+  grid-template-rows: 100px 100px;
+}
+.add {
+  background-color: hsl(195, 30%, 50%);
+  display: block;
+  position: fixed;
+  top: 1rem;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  font-size: 0;
+  border-radius: .5rem;
+  box-shadow: .1rem .1rem .2rem hsla(240, 15%, 20%, .9);
+  transform: rotate(25deg);
+  z-index: 10;
+}
+.add::after {
+  content: '';
+  background-image: url('./assets/icons/add.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 2.5rem;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-25deg);
+}
 .titleOne,
-.titleTwo {
+.titleTwo,
+.titleThree {
   color: hsl(35, 70%, 85%);
   font-weight: 900;
   line-height: .9;
@@ -63,11 +98,37 @@ footer {
 .titleTwo {
   font-size: 5rem;
 }
+.titleThree {
+  font-size: 4rem;
+}
 .char {
   display: none;
 }
-.blank {
+.mark {
   display: none;
+}
+.back {
+  background-color: hsl(40, 100%, 50%);
+  display: block;
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  overflow: hidden;
+  font-size: 0;
+  border-radius: .5rem;
+  box-shadow: .1rem .1rem .2rem hsla(240, 15%, 20%, .9);
+  transform: rotate(25deg);
+}
+.back::after {
+  content: '';
+  background-image: url('./assets/icons/arrow-back.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 2.5rem;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-25deg);
 }
 main {
   display: block;
@@ -80,9 +141,13 @@ section h2 {
   font-weight: 900;
   text-align: right;
 }
-#currentlyReading, #wantToRead, #read {
+#currentlyReading, #wantToRead, #read, #addBooks, #search {
   padding: 1rem;
   padding-top: 0;
+}
+#search {
+  background-color: hsl(340, 100%, 100%);
+  padding-top: 1rem;
 }
 #currentlyReading {
   background-color: hsl(40, 100%, 50%);
@@ -93,11 +158,36 @@ section h2 {
 #wantToRead h2 {
   color: hsl(240, 20%, 40%);
 }
+#wantToRead p {
+  text-align: right;
+  right: 0;
+}
 #read {
   background-color: hsl(195, 30%, 50%);
 }
 #read h2 {
   color: hsl(340, 100%, 100%);
+}
+#addBooks {
+  background-color: hsl(20, 100%, 80%);
+}
+#addBooks h2 {
+  text-align: center;
+}
+.search {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.3rem;
+  text-align: center;
+  outline: none;
+}
+.searchResults {
+  background-color: antiquewhite;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: .5rem;
+  text-align: center;
 }
 .book {
   display: grid;
@@ -153,7 +243,7 @@ section h2 {
   background-image: url('./assets/icons/arrow-changer.svg');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 1.2rem;
+  background-size: 1.5rem;
   box-shadow: .1rem .1rem .2rem hsla(240, 15%, 20%, .9);
   cursor: pointer;
   transform: rotate(25deg);
@@ -198,6 +288,9 @@ section h2 {
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 300px;
   }
+  .add {
+    display: none;
+  }
   .char {
     display: block;
     height: 300px;
@@ -205,9 +298,18 @@ section h2 {
   .char img {
     height: 300px;
   }
+  .mark {
+    display: block;
+    align-self: start;
+    justify-self: start;
+    height: 200px;
+  }
+  .mark img {
+    height: 200px;
+  }
 }
 @media screen and (min-width: 701px) {
-  #hero, main {
+  #hero, #heroSearch, main {
     width: 90%;
   }
   .titleOne {
@@ -216,10 +318,10 @@ section h2 {
   .titleTwo {
     font-size: 7rem;
   }
-  #currentlyReading {
+  #currentlyReading, #search {
     border-radius: 1rem 1rem 0 0;
   }
-  #read {
+  #read, #addBooks {
     border-radius: 0 0 1rem 1rem;
   }
 }
@@ -239,15 +341,14 @@ section h2 {
   .titleTwo {
     font-size: 9rem;
   }
-  .blank {
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    display: inherit;
-    justify-self: stretch;
-    align-self: stretch;
+  .mark {
+    height: 300px;
+  }
+  .mark img {
+    height: 300px;
   }
 }
+
 
 /* test */
 .palette {

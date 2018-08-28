@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
+import { Route } from 'react-router-dom'
 import * as BooksAPI from './utils/BooksAPI'
 import CompHeader from './CompHeader'
 import CompMain from './CompMain'
+import CompHeaderSearch from './CompHeaderSearch'
+import CompAddBooks from './CompAddBooks'
 import CompFooter from './CompFooter'
 
 class App extends Component {
@@ -9,6 +12,7 @@ class App extends Component {
     myReads: []
   }
   componentDidMount() {
+    // Try to get data from localStorage or from BooksAPI
     (!localStorage.getItem('myReadsLocal')) ?
     this.myBooks() :
     this.setState({
@@ -16,9 +20,13 @@ class App extends Component {
     })
   }
   componentDidUpdate(prevState) {
+    // Update the localStorage on changes
     (this.state.myReads !== prevState.myReads) &&
     localStorage.setItem('myReadsLocal', JSON.stringify(this.state.myReads))
   }
+  /*
+   Create the first shelf from selected books
+  */
   myBooks() {
     const currentlyReading = ['mDzDBQAAQBAJ', '_hIWb6Z8mX0C', 'luD1Bpc1fmsC']
     const wantToRead = ['3_PhCwAAQBAJ', 'piwP9HXtpvUC', 'QlduAgAAQBAJ', 'MjhaAAAAMAAJ']
@@ -27,6 +35,9 @@ class App extends Component {
     this.fetchBooks(currentlyReading, 'currentlyReading')
     this.fetchBooks(read, 'read')
   }
+  /*
+   Fetch the chosen books to a specific shelf
+  */
   fetchBooks(books, shelf) {
     books.map((book) => {
       return (
@@ -49,29 +60,55 @@ class App extends Component {
       )
     })
   }
+  /*
+   Function to add star rating
+  */
   star = (item) => {
     item.stars++
     this.setState({
       myReads: this.state.myReads
     })
   }
+  /*
+   Move the current selected book to another shelf
+  */
   move = (shelf, item) => {
+    // prevent overlay mess
     document.querySelectorAll('.bookOverlay')
     .forEach(el => el.style.display = 'none')
+
+    // apply the chosen shelf
     item.book.shelf = shelf
+    // prevent duplicates
+    const filtered = this.state.myReads.filter((el) => el.book.id !== item.book.id)
+    shelf !== 'none' && filtered.push(item)
+
     this.setState({
-      myReads: this.state.myReads
+      myReads: filtered
     })
   }
   render() {
     return (
       <div id="myReads">
-        <CompHeader/>
-        <CompMain
-          myReads={this.state.myReads}
-          addStar={this.star}
-          moveTo={this.move}
-        />
+        <Route exact path="/" render={() => (
+          <CompHeader/>
+        )}/>
+        <Route exact path="/" render={() => (
+          <CompMain
+            myReads={this.state.myReads}
+            moveTo={this.move}
+            addStar={this.star}
+          />
+        )}/>
+        <Route path="/addBooks" render={() => (
+          <CompHeaderSearch/>
+        )}/>
+        <Route path="/addBooks" render={() => (
+          <CompAddBooks
+            myReads={this.state.myReads}
+            moveTo={this.move}
+          />
+        )}/>
         <CompFooter/>
       </div>
     );

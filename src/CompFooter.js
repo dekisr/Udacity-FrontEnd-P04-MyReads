@@ -1,12 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class CompFooter extends Component {
-  render() {
-    return (
-      <footer>
-      </footer>
-    )
-  }
+function CompFooter() {
+  return (
+    <footer>
+    </footer>
+  )
 }
 
 export default CompFooter;
