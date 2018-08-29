@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Arvo|Lobster');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Lobster');
 
 html {
   height: 100%;
   width: 100%;
   box-sizing: border-box;
-  font-family: Arvo, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: 'Open Sans', sans-serif;
 }
 *,
 *:before,
@@ -136,7 +136,7 @@ main {
 section h2 {
   color: hsl(0, 15%, 15%);
   padding: .5rem;
-  font-family: 'Lobster';
+  font-family: 'Lobster', cursive;
   font-size: 1.5rem;
   font-weight: 900;
   text-align: right;
@@ -212,9 +212,53 @@ section h2 {
   color: hsl(0, 15%, 15%);
   font-weight: 900;
 }
+.rating {
+  background-color: hsla(20, 100%, 0%, .2);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: .2rem;
+  direction: rtl;
+  text-align: center;
+  border-radius: 0 0 .5rem .5rem;
+}
+.rating span {
+  font-size: 1.3rem;
+  transition: 0.3s all;
+  display: inline-block;
+  cursor: pointer;
+}
+.rating span:hover {
+  color: hsl(100, 50%, 60%);
+}
+.rating .ratingFive:hover ~ span {
+  color: hsl(100, 50%, 60%);
+}
+.rating .ratingFour:hover ~ span {
+  color: hsl(100, 50%, 60%);
+}
+.rating .ratingThree:hover ~ span {
+  color: hsl(100, 50%, 60%);
+}
+.rating .ratingTwo:hover ~ span {
+  color: hsl(100, 50%, 60%);
+}
+.rating .active {
+  color: hsl(40, 100%, 50%);
+}
 .bookImage {
   width: 100%;
   box-shadow: 0 0 1rem hsla(0, 15%, 15%, .7);
+}
+.noCover {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  font-weight: 900;
+  color: hsl(15, 55%, 85%);
+  background-color: hsl(195, 30%, 50%);
 }
 #wantToRead .book {
   grid-template-columns:  repeat(auto-fit, minmax(260px, 1fr));
@@ -265,6 +309,7 @@ section h2 {
   justify-items: center;
   text-align: center;
   border-radius: .5rem;
+  z-index: 5;
 }
 .book button:focus {
   outline: none;
@@ -273,8 +318,9 @@ section h2 {
   background: none;
   color: hsl(35, 70%, 85%);
   padding: .3rem;
-  font-family: Arvo, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 600;
+  border-radius: .3rem;
 }
 .shelfButton:hover {
   background-color: hsl(20, 100%, 80%);

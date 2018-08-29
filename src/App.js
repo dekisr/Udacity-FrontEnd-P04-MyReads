@@ -18,6 +18,8 @@ class App extends Component {
     this.setState({
         myReads: JSON.parse(localStorage.getItem('myReadsLocal'))
     })
+    // BooksAPI.search('biography').then((resp) => console.log(resp))
+    // BooksAPI.get('Mv_LHAAACAAJ').then(resp => console.log(resp.imageLinks.thumbnail))
   }
   componentDidUpdate(prevState) {
     // Update the localStorage on changes
@@ -63,8 +65,8 @@ class App extends Component {
   /*
    Function to add star rating
   */
-  star = (item) => {
-    item.stars++
+  rating = (num, item) => {
+    item.stars = num
     this.setState({
       myReads: this.state.myReads
     })
@@ -97,7 +99,7 @@ class App extends Component {
           <CompMain
             myReads={this.state.myReads}
             moveTo={this.move}
-            addStar={this.star}
+            addStar={this.rating}
           />
         )}/>
         <Route path="/addBooks" render={() => (

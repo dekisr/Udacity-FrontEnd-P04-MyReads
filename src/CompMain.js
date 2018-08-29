@@ -11,6 +11,7 @@ function CompMain(props) {
           myReads={props.myReads}
           shelf={'currentlyReading'}
           moveTo={props.moveTo}
+          addStar={props.addStar}
         />
       </section>
       <section id="wantToRead">
@@ -19,6 +20,7 @@ function CompMain(props) {
           myReads={props.myReads}
           shelf={'wantToRead'}
           moveTo={props.moveTo}
+          addStar={props.addStar}
         />
       </section>
       <section id="read">
@@ -27,6 +29,7 @@ function CompMain(props) {
           myReads={props.myReads}
           shelf={'read'}
           moveTo={props.moveTo}
+          addStar={props.addStar}
         />
       </section>
     </main>
@@ -34,7 +37,8 @@ function CompMain(props) {
 }
 CompMain.propTypes = {
   myReads: PropTypes.array.isRequired,
-  moveTo: PropTypes.func.isRequired
+  moveTo: PropTypes.func.isRequired,
+  addStar: PropTypes.func.isRequired
 }
 
 export default CompMain;

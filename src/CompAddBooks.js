@@ -63,12 +63,12 @@ class CompAddBooks extends Component {
           <h2>searching for... ' {this.state.query} '</h2>
           {this.state.searchResults.length > 0 && (
             <div className="searchResults">
-              showing {this.state.searchResults.length} results
+              Found {this.state.searchResults.length} results
             </div>
           )}
           {this.state.invalid === true && (
             <div className="searchResults">
-              We didnt found anything
+              We didnt find anything...
             </div>
           )}
           <CompBook
