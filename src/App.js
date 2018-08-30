@@ -96,20 +96,20 @@ class App extends Component {
     } else {
       return (
         <div id="myReads">
-          {/* <Route exact path="/" render={() => (
+          <Route exact path={process.env.PUBLIC_URL + '/'} render={() => (
             <CompHeader/>
-          )}/> */}
-          <Route exact path="/" render={() => (
+          )}/>
+          <Route exact path={process.env.PUBLIC_URL + '/'} render={() => (
             <CompMain
               myReads={this.state.myReads}
               moveTo={this.move}
               addStar={this.rating}
             />
           )}/>
-          {/* <Route path="/addBooks" render={() => (
+          <Route path={process.env.PUBLIC_URL + '/addBooks'} render={() => (
             <CompHeaderAddBooks/>
-          )}/> */}
-          <Route path="/addBooks" render={() => (
+          )}/>
+          <Route path={process.env.PUBLIC_URL + '/addBooks'} render={() => (
             <CompAddBooks
               myReads={this.state.myReads}
               moveTo={this.move}
