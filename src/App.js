@@ -96,9 +96,9 @@ class App extends Component {
     } else {
       return (
         <div id="myReads">
-          <Route exact path="/" render={() => (
+          {/* <Route exact path="/" render={() => (
             <CompHeader/>
-          )}/>
+          )}/> */}
           <Route exact path="/" render={() => (
             <CompMain
               myReads={this.state.myReads}
@@ -106,9 +106,9 @@ class App extends Component {
               addStar={this.rating}
             />
           )}/>
-          <Route path="/addBooks" render={() => (
+          {/* <Route path="/addBooks" render={() => (
             <CompHeaderAddBooks/>
-          )}/>
+          )}/> */}
           <Route path="/addBooks" render={() => (
             <CompAddBooks
               myReads={this.state.myReads}
