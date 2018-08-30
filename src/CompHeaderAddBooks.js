@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function CompHeaderSearch(props) {
+function CompHeaderAddBooks(props) {
   return (
-    <header className="headerSearch">
-      <div id="heroSearch">
+    <header className="headerAddBooks">
+      <div id="heroAddBooks">
         <Link to="/" className="back">Back</Link>
         <p className="titleThree">add Books</p>
       </div>
@@ -12,4 +12,4 @@ function CompHeaderSearch(props) {
   )
 }
 
-export default CompHeaderSearch;
+export default CompHeaderAddBooks;

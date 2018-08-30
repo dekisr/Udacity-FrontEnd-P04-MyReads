@@ -7,8 +7,7 @@ class CompBook extends Component {
   static propTypes = {
     myReads: PropTypes.array.isRequired,
     shelf: PropTypes.string.isRequired,
-    moveTo: PropTypes.func.isRequired,
-    addStar: PropTypes.func.isRequired
+    moveTo: PropTypes.func.isRequired
   }
   // clear overlay divs to prevent mess
   clear() {

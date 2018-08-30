@@ -32,11 +32,11 @@ header {
   min-width: 320px;
   font-family: 'Lobster', cursive;
 }
-header.headerSearch {
+header.headerAddBooks {
   background-image: none;
 }
 #hero,
-#heroSearch,
+#heroAddBooks,
 main,
 footer {
   max-width: 1200px;
@@ -44,10 +44,19 @@ footer {
   margin: 0 auto;
 }
 footer {
-  padding: 3rem;
+  color: hsl(15, 55%, 85%);
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  padding: 2rem;
+  font-size: .9rem;
+  opacity: .5;
+}
+footer a {
+  color: hsl(340, 100%, 100%);
 }
 #hero,
-#heroSearch {
+#heroAddBooks {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 200px;
@@ -56,7 +65,7 @@ footer {
   justify-items: center;
   align-items: center;
 }
-#heroSearch {
+#heroAddBooks {
   grid-template-rows: 100px 100px;
 }
 .add {
@@ -182,12 +191,20 @@ section h2 {
   outline: none;
 }
 .searchResults {
-  background-color: antiquewhite;
+  background-color: hsl(340, 100%, 100%);
   width: 100%;
   margin-bottom: 1rem;
   padding: 1rem;
   border-radius: .5rem;
   text-align: center;
+}
+.searchTerms {
+  background-color: hsl(195, 30%, 50%);
+  color: hsl(340, 100%, 100%);
+  margin-top: 1rem;
+  padding: 1rem;
+  font-size: .8rem;
+  border-radius: .5rem;
 }
 .book {
   display: grid;
@@ -355,7 +372,7 @@ section h2 {
   }
 }
 @media screen and (min-width: 701px) {
-  #hero, #heroSearch, main {
+  #hero, #heroAddBooks, main {
     width: 90%;
   }
   .titleOne {
@@ -408,11 +425,54 @@ section h2 {
   hsl(0, 100%, 60%),
   hsl(100, 50%, 60%)
 }
-.palette {
+.palette2 {
   color:
   hsl(240, 15%, 20%),
   hsl(240, 20%, 40%),
   hsl(35, 70%, 85%),
   hsl(40, 100%, 50%),
   hsl(0, 15%, 15%)
+}
+.loading {
+  position: fixed;
+  display: grid;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  align-items: center;
+  justify-items: center;
+}
+/* I got this spinner from https://loading.io */
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid #cef;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+  0% {
+    top: 28px;
+    left: 28px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: -1px;
+    left: -1px;
+    width: 58px;
+    height: 58px;
+    opacity: 0;
+  }
 }

@@ -3,20 +3,23 @@ import { Route } from 'react-router-dom'
 import * as BooksAPI from './utils/BooksAPI'
 import CompHeader from './CompHeader'
 import CompMain from './CompMain'
-import CompHeaderSearch from './CompHeaderSearch'
+import CompHeaderAddBooks from './CompHeaderAddBooks'
 import CompAddBooks from './CompAddBooks'
 import CompFooter from './CompFooter'
+import CompLoading from './CompLoading'
 
 class App extends Component {
   state = {
-    myReads: []
+    myReads: [],
+    loading: false
   }
   componentDidMount() {
     // Try to get data from localStorage or from BooksAPI
     (!localStorage.getItem('myReadsLocal')) ?
     this.myBooks() :
     this.setState({
-        myReads: JSON.parse(localStorage.getItem('myReadsLocal'))
+      myReads: JSON.parse(localStorage.getItem('myReadsLocal')),
+      loading: true
     })
     // BooksAPI.search('biography').then((resp) => console.log(resp))
     // BooksAPI.get('Mv_LHAAACAAJ').then(resp => console.log(resp.imageLinks.thumbnail))
@@ -56,7 +59,8 @@ class App extends Component {
           return list
         }).then((resp) => {
           this.setState((prevState) => ({
-            myReads: prevState.myReads.concat(resp)
+            myReads: prevState.myReads.concat(resp),
+            loading: true
           }))
         })
       )
@@ -90,6 +94,11 @@ class App extends Component {
     })
   }
   render() {
+    if(this.state.loading === false) {
+      return <CompLoading/>
+    } else {
+
+    
     return (
       <div id="myReads">
         <Route exact path="/" render={() => (
@@ -103,7 +112,7 @@ class App extends Component {
           />
         )}/>
         <Route path="/addBooks" render={() => (
-          <CompHeaderSearch/>
+          <CompHeaderAddBooks/>
         )}/>
         <Route path="/addBooks" render={() => (
           <CompAddBooks
@@ -114,6 +123,7 @@ class App extends Component {
         <CompFooter/>
       </div>
     );
+  }
   }
 }
 
