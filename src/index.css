@@ -20,8 +20,8 @@ body {
             hsl(240, 15%, 20%));
   background-attachment: fixed;
   background-color: hsl(240, 15%, 20%);
-  min-height: 100%;
   color: hsl(0, 15%, 15%);
+  min-height: 100%;
 }
 header {
   background-image: url('./assets/images/mainBg.svg');
@@ -270,12 +270,12 @@ section h2 {
   box-shadow: 0 0 1rem hsla(0, 15%, 15%, .7);
 }
 .noCover {
+  background-color: hsl(195, 30%, 50%);
+  color: hsl(15, 55%, 85%);
   display: grid;
   align-content: center;
   justify-content: center;
   font-weight: 900;
-  color: hsl(15, 55%, 85%);
-  background-color: hsl(195, 30%, 50%);
 }
 #wantToRead .book {
   grid-template-columns:  repeat(auto-fit, minmax(260px, 1fr));
@@ -294,17 +294,17 @@ section h2 {
   font-size: .8rem;
 }
 .changer, .changerOver {
+  background-color: hsl(100, 50%, 60%);
+  background-image: url('./assets/icons/arrow-changer.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1.5rem;
   position: absolute;
   align-self: center;
   left: -.5rem;
   width: 2rem;
   height: 2rem;
   border-radius: .5rem;
-  background-color: hsl(100, 50%, 60%);
-  background-image: url('./assets/icons/arrow-changer.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 1.5rem;
   box-shadow: .1rem .1rem .2rem hsla(240, 15%, 20%, .9);
   cursor: pointer;
   transform: rotate(25deg);

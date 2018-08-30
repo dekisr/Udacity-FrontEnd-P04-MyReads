@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Route } from 'react-router-dom'
+import sortBy from 'sort-by'
 import CompBookRating from './CompBookRating'
 
 class CompBook extends Component {
@@ -20,8 +21,6 @@ class CompBook extends Component {
 
     const bookOverlay = document.getElementById(id)
     bookOverlay.style.display = 'grid'
-    console.log(bookOverlay)
-    console.log(id)
     // bookDiv.style.display === 'grid' ?
     // (bookDiv.style.display = 'none') :
     // (bookDiv.style.display = 'grid')
@@ -48,11 +47,14 @@ class CompBook extends Component {
      Render the books for the specific shelf
     */
     const { myReads, shelf, moveTo, addStar } = this.props
+    //sort by title
+    myReads.sort(sortBy('book.title'))
     return(
       <ul className="book">
         {myReads.filter((item) => item.book.shelf === shelf)
         .map((item, index) => (
           <li key={index} className={item.book.id}>
+            {/* placeholder for undefined images */}
             {
               item.book.imageLinks === undefined ?
               <div className="bookImage noCover">NO COVER</div> :
@@ -60,6 +62,7 @@ class CompBook extends Component {
             }
             <div>
               <span className="bookTitle">{item.book.title}</span>
+              {/* placeholder for undefined authors */}
               {
                 item.book.authors === undefined ?
                 <span>----------</span> :

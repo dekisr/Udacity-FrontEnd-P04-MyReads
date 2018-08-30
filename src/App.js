@@ -21,8 +21,6 @@ class App extends Component {
       myReads: JSON.parse(localStorage.getItem('myReadsLocal')),
       loading: true
     })
-    // BooksAPI.search('biography').then((resp) => console.log(resp))
-    // BooksAPI.get('Mv_LHAAACAAJ').then(resp => console.log(resp.imageLinks.thumbnail))
   }
   componentDidUpdate(prevState) {
     // Update the localStorage on changes
@@ -82,7 +80,6 @@ class App extends Component {
     // prevent overlay mess
     document.querySelectorAll('.bookOverlay')
     .forEach(el => el.style.display = 'none')
-
     // apply the chosen shelf
     item.book.shelf = shelf
     // prevent duplicates
@@ -97,33 +94,31 @@ class App extends Component {
     if(this.state.loading === false) {
       return <CompLoading/>
     } else {
-
-    
-    return (
-      <div id="myReads">
-        <Route exact path="/" render={() => (
-          <CompHeader/>
-        )}/>
-        <Route exact path="/" render={() => (
-          <CompMain
-            myReads={this.state.myReads}
-            moveTo={this.move}
-            addStar={this.rating}
-          />
-        )}/>
-        <Route path="/addBooks" render={() => (
-          <CompHeaderAddBooks/>
-        )}/>
-        <Route path="/addBooks" render={() => (
-          <CompAddBooks
-            myReads={this.state.myReads}
-            moveTo={this.move}
-          />
-        )}/>
-        <CompFooter/>
-      </div>
-    );
-  }
+      return (
+        <div id="myReads">
+          <Route exact path="/" render={() => (
+            <CompHeader/>
+          )}/>
+          <Route exact path="/" render={() => (
+            <CompMain
+              myReads={this.state.myReads}
+              moveTo={this.move}
+              addStar={this.rating}
+            />
+          )}/>
+          <Route path="/addBooks" render={() => (
+            <CompHeaderAddBooks/>
+          )}/>
+          <Route path="/addBooks" render={() => (
+            <CompAddBooks
+              myReads={this.state.myReads}
+              moveTo={this.move}
+            />
+          )}/>
+          <CompFooter/>
+        </div>
+      );
+    }
   }
 }
 
