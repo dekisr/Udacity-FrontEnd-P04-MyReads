@@ -13,14 +13,15 @@ function CompHeader(props) {
           <p className="titleTwo">Reads</p>
         </div>
         <div className="mark">
-          <Link to="/addBooks">
+          <Link to={process.env.PUBLIC_URL + '/addBooks'}>
             <img src={bookmark} alt="Add Books"/>
           </Link>
         </div>
       </div>
-      <Link to="/addBooks" className="add">Add Books</Link>
+      <Link to={process.env.PUBLIC_URL + '/addBooks'} className="add">Add Books</Link>
     </header>
   )
 }
 
 export default CompHeader;
+
