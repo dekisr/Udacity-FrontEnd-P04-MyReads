@@ -277,6 +277,22 @@ section h2 {
   justify-content: center;
   font-weight: 900;
 }
+.onShelf {
+  background-color: hsl(35, 70%, 85%) !important;
+}
+.onShelfLine {
+  background-color: hsl(40, 100%, 50%);
+  color: hsl(0, 15%, 15%);
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: .2rem;
+  font-size: .9rem;
+  font-weight: 900;
+  text-align: center;
+}
 #wantToRead .book {
   grid-template-columns:  repeat(auto-fit, minmax(260px, 1fr));
 }
@@ -322,6 +338,7 @@ section h2 {
   left: 0;
   display: none;
   grid-template-columns: 1fr;
+  justify-content: center;
   align-content: center;
   justify-items: center;
   text-align: center;
@@ -330,6 +347,14 @@ section h2 {
 }
 .book button:focus {
   outline: none;
+}
+.buttons {
+  display: grid;
+  grid-template-columns: 1;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
 }
 .shelfButton {
   background: none;

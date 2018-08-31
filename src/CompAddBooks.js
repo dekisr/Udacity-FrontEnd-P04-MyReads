@@ -25,7 +25,10 @@ class CompAddBooks extends Component {
           const obj = {...item, stars: 0}
           obj.shelf = 'none'
           // Do not show books that are already in a shelf
-          return !this.props.myReads.find(el => el.id === obj.id) && list.push(obj)
+          // return !this.props.myReads.find(el => el.id === obj.id) && list.push(obj)
+          // Check for duplicates
+          const checked = this.props.myReads.find(el => el.id === obj.id)
+          return checked ? list.push(checked) : list.push(obj)
         })
         return list
       }).then((resp) => {

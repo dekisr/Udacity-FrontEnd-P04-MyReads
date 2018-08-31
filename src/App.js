@@ -49,7 +49,6 @@ class App extends Component {
             ...resp.book,
             stars: 0
           }
-          console.log(obj)
           return obj
         }).then((resp) => {
           let list = []
@@ -73,9 +72,11 @@ class App extends Component {
       ...item,
       stars: num
     }
-    console.log(updatedBook)
+    const updatedBooks = this.state.myReads
+    const filtered = updatedBooks.filter((el) => el.id !== updatedBook.id)
+    filtered.push(updatedBook)
     this.setState({
-      myReads: this.state.myReads
+      myReads: filtered
     })
   }
   /*
@@ -86,11 +87,12 @@ class App extends Component {
     document.querySelectorAll('.bookOverlay')
     .forEach(el => el.style.display = 'none')
     // apply the chosen shelf
-    item.shelf = shelf
+    const updatedBook = item
+    updatedBook.shelf = shelf
+    const updatedBooks = this.state.myReads
     // prevent duplicates
-    const filtered = this.state.myReads.filter((el) => el.id !== item.id)
-    shelf !== 'none' && filtered.push(item)
-
+    const filtered = updatedBooks.filter((el) => el.id !== updatedBook.id)
+    shelf !== 'none' && filtered.push(updatedBook)
     this.setState({
       myReads: filtered
     })

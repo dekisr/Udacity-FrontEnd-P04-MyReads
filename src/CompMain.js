@@ -3,33 +3,34 @@ import PropTypes from 'prop-types'
 import CompBook from './CompBook';
 
 function CompMain(props) {
+  const {myReads, moveTo, addStar} = props
   return (
     <main>
       <section id="currentlyReading">
         <h2>Reading...</h2>
         <CompBook
-          myReads={props.myReads}
+          myReads={myReads}
           shelf={'currentlyReading'}
-          moveTo={props.moveTo}
-          addStar={props.addStar}
+          moveTo={moveTo}
+          addStar={addStar}
         />
       </section>
       <section id="wantToRead">
         <h2>Want to read!</h2>
         <CompBook
-          myReads={props.myReads}
+          myReads={myReads}
           shelf={'wantToRead'}
-          moveTo={props.moveTo}
-          addStar={props.addStar}
+          moveTo={moveTo}
+          addStar={addStar}
         />
       </section>
       <section id="read">
         <h2>Read.</h2>
         <CompBook
-          myReads={props.myReads}
+          myReads={myReads}
           shelf={'read'}
-          moveTo={props.moveTo}
-          addStar={props.addStar}
+          moveTo={moveTo}
+          addStar={addStar}
         />
       </section>
     </main>
