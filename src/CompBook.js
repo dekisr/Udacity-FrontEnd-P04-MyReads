@@ -51,25 +51,25 @@ class CompBook extends Component {
     myReads.sort(sortBy('book.title'))
     return(
       <ul className="book">
-        {myReads.filter((item) => item.book.shelf === shelf)
+        {myReads.filter((item) => item.shelf === shelf)
         .map((item, index) => (
-          <li key={index} className={item.book.id}>
+          <li key={index} className={item.id}>
             {/* placeholder for undefined images */}
             {
-              item.book.imageLinks === undefined ?
+              item.imageLinks === undefined ?
               <div className="bookImage noCover">NO COVER</div> :
-              <img src={item.book.imageLinks.thumbnail} alt={item.book.title} className="bookImage"/>
+              <img src={item.imageLinks.thumbnail} alt={item.title} className="bookImage"/>
             }
             <div>
-              <span className="bookTitle">{item.book.title}</span>
+              <span className="bookTitle">{item.title}</span>
               {/* placeholder for undefined authors */}
               {
-                item.book.authors === undefined ?
+                item.authors === undefined ?
                 <span>----------</span> :
-                <span>{item.book.authors}</span>
+                <span>{item.authors}</span>
               }
-              <span>Published: {item.book.publishedDate}</span>
-              <span>Pages: {item.book.pageCount}</span>
+              <span>Published: {item.publishedDate}</span>
+              <span>Pages: {item.pageCount}</span>
               {/* Rating stars should only be available for books that are on shelves */}
               <Route exact path="/" render={() => (
               <CompBookRating
@@ -78,8 +78,8 @@ class CompBook extends Component {
               />
               )}/>
             </div>
-            <button className="changer" onClick={() => this.overlayMenu(`${item.book.id}_overlay`, shelf)}></button>
-            <div id={`${item.book.id}_overlay`} className="bookOverlay">
+            <button className="changer" onClick={() => this.overlayMenu(`${item.id}_overlay`, shelf)}></button>
+            <div id={`${item.id}_overlay`} className="bookOverlay">
               <button className="changerOver" onClick={() => this.clear()}></button>
               <h3>Move to:</h3>
               <button className="shelfButton" onClick={() => moveTo('currentlyReading', item)}>Reading</button>

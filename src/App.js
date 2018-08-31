@@ -46,13 +46,14 @@ class App extends Component {
       return (
         BooksAPI.get(book).then((resp) => {
           const obj = {
-            book: resp.book,
+            ...resp.book,
             stars: 0
           }
+          console.log(obj)
           return obj
         }).then((resp) => {
           let list = []
-          resp.book.shelf = shelf
+          resp.shelf = shelf
           list.push(resp)
           return list
         }).then((resp) => {
@@ -68,7 +69,11 @@ class App extends Component {
    Function to add star rating
   */
   rating = (num, item) => {
-    item.stars = num
+    const updatedBook = {
+      ...item,
+      stars: num
+    }
+    console.log(updatedBook)
     this.setState({
       myReads: this.state.myReads
     })
@@ -81,9 +86,9 @@ class App extends Component {
     document.querySelectorAll('.bookOverlay')
     .forEach(el => el.style.display = 'none')
     // apply the chosen shelf
-    item.book.shelf = shelf
+    item.shelf = shelf
     // prevent duplicates
-    const filtered = this.state.myReads.filter((el) => el.book.id !== item.book.id)
+    const filtered = this.state.myReads.filter((el) => el.id !== item.id)
     shelf !== 'none' && filtered.push(item)
 
     this.setState({

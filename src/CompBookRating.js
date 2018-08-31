@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 function CompBookRating(props) {
   return (
-    <div id={`${props.item.book.id}_rating`} className="rating">
+    <div id={`${props.item.id}_rating`} className="rating">
     {
       props.item.stars > 4 ?
       <span className="ratingFive active" onClick={() => props.addStar(5, props.item)}>★</span> :

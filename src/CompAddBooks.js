@@ -21,11 +21,11 @@ class CompAddBooks extends Component {
     if (query.length) {
       BooksAPI.search(query).then((resp) => {
         let list = []
-        resp.map((book) => {
-          const obj = {book: book,stars: 0}
-          obj.book.shelf = 'none'
+        resp.map((item) => {
+          const obj = {...item, stars: 0}
+          obj.shelf = 'none'
           // Do not show books that are already in a shelf
-          return !this.props.myReads.find(el => el.book.id === obj.book.id) && list.push(obj)
+          return !this.props.myReads.find(el => el.id === obj.id) && list.push(obj)
         })
         return list
       }).then((resp) => {
