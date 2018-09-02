@@ -1,7 +1,7 @@
 import React , { Component } from 'react'
 import PropTypes from 'prop-types'
 
-class CompOnTheShelf extends Component {
+class OnTheShelf extends Component {
   static propTypes = {
     myReads: PropTypes.array.isRequired,
     moveTo: PropTypes.func.isRequired,
@@ -62,4 +62,4 @@ class CompOnTheShelf extends Component {
   }
 }
 
-export default CompOnTheShelf;
+export default OnTheShelf;

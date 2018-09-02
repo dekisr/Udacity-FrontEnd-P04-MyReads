@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Route } from 'react-router-dom'
 import sortBy from 'sort-by'
-import CompBookRating from './CompBookRating'
-import CompOnTheShelf from './CompOnTheShelf'
-import CompBookOverlay from './CompBookOverlay'
+import BookRating from './BookRating'
+import OnTheShelf from './OnTheShelf'
+import BookOverlay from './BookOverlay'
 
-class CompBook extends Component {
+class Book extends Component {
   static propTypes = {
     myReads: PropTypes.array.isRequired,
     shelf: PropTypes.string.isRequired,
@@ -37,7 +37,7 @@ class CompBook extends Component {
     return(
       <ul className="book">
         <Route exact path={process.env.PUBLIC_URL + '/addBooks'} render={() => (
-          <CompOnTheShelf
+          <OnTheShelf
             myReads={myReads}
             shelf={shelf}
             moveTo={moveTo}
@@ -65,14 +65,14 @@ class CompBook extends Component {
               <span>Pages: {item.pageCount}</span>
               {/* Rating stars should only be available for books that are on shelves */}
               <Route exact path={process.env.PUBLIC_URL + '/'} render={() => (
-                <CompBookRating
+                <BookRating
                   item={item}
                   addStar={addStar}
                 />
               )}/>
             </div>
             <button className="changer" onClick={() => this.overlayMenu(`${item.id}_overlay`, shelf)}></button>
-            <CompBookOverlay
+            <BookOverlay
               item={item}
               moveTo={moveTo}
               overlayMenu={this.overlayMenu}
@@ -85,4 +85,4 @@ class CompBook extends Component {
   }
 }
 
-export default CompBook;
+export default Book;

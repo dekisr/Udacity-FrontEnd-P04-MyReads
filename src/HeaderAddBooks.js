@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function CompHeaderAddBooks(props) {
+function HeaderAddBooks(props) {
   return (
     <header className="headerAddBooks">
       <div id="heroAddBooks">
@@ -12,4 +12,4 @@ function CompHeaderAddBooks(props) {
   )
 }
 
-export default CompHeaderAddBooks;
+export default HeaderAddBooks;

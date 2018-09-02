@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-function CompBookRating(props) {
+function BookRating(props) {
   return (
     <div id={`${props.item.id}_rating`} className="rating">
       {
@@ -32,8 +32,8 @@ function CompBookRating(props) {
     </div>
   )
 }
-CompBookRating.propTypes = {
+BookRating.propTypes = {
   addStar: PropTypes.func.isRequired
 }
 
-export default CompBookRating;
+export default BookRating;

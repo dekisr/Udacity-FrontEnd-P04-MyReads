@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import payaso from './assets/images/char.svg'
 import bookmark from './assets/images/bmark.svg'
 
-function CompHeader(props) {
+function Header(props) {
   return (
     <header>
       <div id="hero">
@@ -23,5 +23,5 @@ function CompHeader(props) {
   )
 }
 
-export default CompHeader;
+export default Header;
 

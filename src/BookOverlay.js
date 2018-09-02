@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-function CompBookOverlay(props) {
+function BookOverlay(props) {
   const { item, moveTo, clear } = props
   return (
     <div id={`${item.id}_overlay`} className="bookOverlay">
@@ -42,9 +42,9 @@ function CompBookOverlay(props) {
     </div>
   )
 }
-CompBookOverlay.propTypes = {
+BookOverlay.propTypes = {
   moveTo: PropTypes.func.isRequired,
   clear: PropTypes.func.isRequired
 }
 
-export default CompBookOverlay;
+export default BookOverlay;

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function CompLoading(props) {
+function Loading(props) {
   return (
     <div className="loading">
       <div className="lds-ripple"><div></div><div></div></div>
@@ -8,4 +8,4 @@ function CompLoading(props) {
   )
 }
 
-export default CompLoading;
+export default Loading;

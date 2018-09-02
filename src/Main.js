@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import CompBook from './CompBook';
+import Book from './Book';
 
-function CompMain(props) {
+function Main(props) {
   const {myReads, moveTo, addStar} = props
   return (
     <main>
       <section id="currentlyReading">
         <h2>Reading...</h2>
-        <CompBook
+        <Book
           myReads={myReads}
           shelf={'currentlyReading'}
           moveTo={moveTo}
@@ -17,7 +17,7 @@ function CompMain(props) {
       </section>
       <section id="wantToRead">
         <h2>Want to read!</h2>
-        <CompBook
+        <Book
           myReads={myReads}
           shelf={'wantToRead'}
           moveTo={moveTo}
@@ -26,7 +26,7 @@ function CompMain(props) {
       </section>
       <section id="read">
         <h2>Read.</h2>
-        <CompBook
+        <Book
           myReads={myReads}
           shelf={'read'}
           moveTo={moveTo}
@@ -36,10 +36,10 @@ function CompMain(props) {
     </main>
   )
 }
-CompMain.propTypes = {
+Main.propTypes = {
   myReads: PropTypes.array.isRequired,
   moveTo: PropTypes.func.isRequired,
   addStar: PropTypes.func.isRequired
 }
 
-export default CompMain;
+export default Main;

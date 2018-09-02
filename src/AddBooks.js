@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import * as BooksAPI from './utils/BooksAPI'
 import { debounce } from 'lodash'
-import CompBook from './CompBook'
+import Book from './Book'
 
-class CompAddBooks extends Component {
+class AddBooks extends Component {
   static propTypes = {
     myReads: PropTypes.array.isRequired,
     moveTo: PropTypes.func.isRequired
@@ -24,9 +24,7 @@ class CompAddBooks extends Component {
         resp.map((item) => {
           const obj = {...item, stars: 0}
           obj.shelf = 'none'
-          // Do not show books that are already in a shelf
-          // return !this.props.myReads.find(el => el.id === obj.id) && list.push(obj)
-          // Check for duplicates
+          // Prevent duplicates
           const checked = this.props.myReads.find(el => el.id === obj.id)
           return checked ? list.push(checked) : list.push(obj)
         })
@@ -77,7 +75,7 @@ class CompAddBooks extends Component {
               <p className="searchTerms"><strong>Available search terms:</strong> 'Android', 'Art', 'Artificial Intelligence', 'Astronomy', 'Austen', 'Baseball', 'Basketball', 'Bhagat', 'Biography', 'Brief', 'Business', 'Camus', 'Cervantes', 'Christie', 'Classics', 'Comics', 'Cook', 'Cricket', 'Cycling', 'Desai', 'Design', 'Development', 'Digital Marketing', 'Drama', 'Drawing', 'Dumas', 'Education', 'Everything', 'Fantasy', 'Film', 'Finance', 'First', 'Fitness', 'Football', 'Future', 'Games', 'Gandhi', 'Homer', 'Horror', 'Hugo', 'Ibsen', 'Journey', 'Kafka', 'King', 'Lahiri', 'Larsson', 'Learn', 'Literary Fiction', 'Make', 'Manage', 'Marquez', 'Money', 'Mystery', 'Negotiate', 'Painting', 'Philosophy', 'Photography', 'Poetry', 'Production', 'Programming', 'React', 'Redux', 'River', 'Robotics', 'Rowling', 'Satire', 'Science Fiction', 'Shakespeare', 'Singh', 'Swimming', 'Tale', 'Thrun', 'Time', 'Tolstoy', 'Travel', 'Ultimate', 'Virtual Reality', 'Web Development', 'iOS'</p>
             </div>
           )}
-          <CompBook
+          <Book
             myReads={this.state.searchResults}
             shelf={'none'}
             moveTo={this.props.moveTo}
@@ -88,4 +86,4 @@ class CompAddBooks extends Component {
   }
 }
 
-export default CompAddBooks;
+export default AddBooks;

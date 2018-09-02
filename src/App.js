@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
 import * as BooksAPI from './utils/BooksAPI'
-import CompHeader from './CompHeader'
-import CompMain from './CompMain'
-import CompHeaderAddBooks from './CompHeaderAddBooks'
-import CompAddBooks from './CompAddBooks'
-import CompFooter from './CompFooter'
-import CompLoading from './CompLoading'
+import Header from './Header'
+import Main from './Main'
+import HeaderAddBooks from './HeaderAddBooks'
+import AddBooks from './AddBooks'
+import Footer from './Footer'
+import Loading from './Loading'
 
 class App extends Component {
   state = {
@@ -99,30 +99,30 @@ class App extends Component {
   }
   render() {
     if(this.state.loading === false) {
-      return <CompLoading/>
+      return <Loading/>
     } else {
       return (
         <div id="myReads">
           <Route exact path={process.env.PUBLIC_URL + '/'} render={() => (
-            <CompHeader/>
+            <Header/>
           )}/>
           <Route exact path={process.env.PUBLIC_URL + '/'} render={() => (
-            <CompMain
+            <Main
               myReads={this.state.myReads}
               moveTo={this.move}
               addStar={this.rating}
             />
           )}/>
           <Route path={process.env.PUBLIC_URL + '/addBooks'} render={() => (
-            <CompHeaderAddBooks/>
+            <HeaderAddBooks/>
           )}/>
           <Route path={process.env.PUBLIC_URL + '/addBooks'} render={() => (
-            <CompAddBooks
+            <AddBooks
               myReads={this.state.myReads}
               moveTo={this.move}
             />
           )}/>
-          <CompFooter/>
+          <Footer/>
         </div>
       );
     }
