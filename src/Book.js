@@ -36,7 +36,7 @@ class Book extends Component {
     myReads.sort(sortBy('title'))
     return(
       <ul className="book">
-        <Route exact path={process.env.PUBLIC_URL + '/addBooks'} render={() => (
+        <Route exact path={process.env.PUBLIC_URL + '/search'} render={() => (
           <OnTheShelf
             myReads={myReads}
             shelf={shelf}
