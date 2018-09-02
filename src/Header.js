@@ -13,12 +13,12 @@ function Header(props) {
           <p className="titleTwo">Reads</p>
         </div>
         <div className="mark">
-          <Link to={process.env.PUBLIC_URL + '/addBooks'}>
+          <Link to={process.env.PUBLIC_URL + '/search'}>
             <img src={bookmark} alt="Add Books"/>
           </Link>
         </div>
       </div>
-      <Link to={process.env.PUBLIC_URL + '/addBooks'} className="add">Add Books</Link>
+      <Link to={process.env.PUBLIC_URL + '/search'} className="add">Add Books</Link>
     </header>
   )
 }

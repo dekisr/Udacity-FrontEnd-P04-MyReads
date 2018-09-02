@@ -113,10 +113,10 @@ class App extends Component {
               addStar={this.rating}
             />
           )}/>
-          <Route path={process.env.PUBLIC_URL + '/addBooks'} render={() => (
+          <Route path={process.env.PUBLIC_URL + '/search'} render={() => (
             <HeaderAddBooks/>
           )}/>
-          <Route path={process.env.PUBLIC_URL + '/addBooks'} render={() => (
+          <Route path={process.env.PUBLIC_URL + '/search'} render={() => (
             <AddBooks
               myReads={this.state.myReads}
               moveTo={this.move}
