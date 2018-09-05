@@ -13,7 +13,7 @@ This is my fourth project of the Advanced Front-End course, from Udacity Brasil.
 > **Starting from Scratch:**  
 If you'd like to start completely from scratch, you can use Create React App to create a new React application. However, even if you create your own application from scratch you'll still need to use the booksAPI.js file that comes with the starter template to interact with the backend API. Instructions for using the API methods are provided in the README in the starter template repository.  
 > **App Functionality:**  
-In this application, the main page displays a list of "shelves" (i.e. categories), each of which contains a number of books. The three shelves are:  
+In this application, the main page displays a list of "shelves" (i.e. categories), each of which contains a number of books. You can also search and add more books in the /search page. The three shelves are:  
 .Currently Reading  
 .Want to Read  
 .Read  
