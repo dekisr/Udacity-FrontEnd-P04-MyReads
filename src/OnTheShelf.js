@@ -1,5 +1,6 @@
 import React , { Component } from 'react'
 import PropTypes from 'prop-types'
+import BookOverlay from './BookOverlay'
 
 class OnTheShelf extends Component {
   static propTypes = {
@@ -48,14 +49,12 @@ class OnTheShelf extends Component {
             <span className="onShelfLine">Currently on the "{this.currentShelf(item.shelf)}" shelf</span>
           </div>
           <button className="changer" onClick={() => overlayMenu(`${item.id}_overlay`, item.shelf)}></button>
-          <div id={`${item.id}_overlay`} className="bookOverlay">
-            <button className="changerOver" onClick={() => clear()}></button>
-            <h3>Move to:</h3>
-            <button className="shelfButton" onClick={() => moveTo('currentlyReading', item)}>Reading</button>
-            <button className="shelfButton" onClick={() => moveTo('wantToRead', item)}>Want to read</button>
-            <button className="shelfButton" onClick={() => moveTo('read', item)}>Read</button>
-            <button className="shelfButton" onClick={() => moveTo('none', item)}>Remove</button>
-          </div>
+          <BookOverlay
+              item={item}
+              moveTo={moveTo}
+              overlayMenu={overlayMenu}
+              clear={clear}
+            />
         </li>
       ))
     )
