@@ -1,12 +1,16 @@
 {
-  "main.css": "static/css/main.9c084ad2.css",
-  "main.css.map": "static/css/main.9c084ad2.css.map",
-  "main.js": "static/js/main.ade92761.js",
-  "main.js.map": "static/js/main.ade92761.js.map",
-  "static\\media\\add.svg": "static/media/add.0f57ef90.svg",
-  "static\\media\\arrow-back.svg": "static/media/arrow-back.f8765f1c.svg",
-  "static\\media\\arrow-changer.svg": "static/media/arrow-changer.f8337b30.svg",
-  "static\\media\\bmark.svg": "static/media/bmark.b4604bc2.svg",
-  "static\\media\\char.svg": "static/media/char.9b487253.svg",
-  "static\\media\\mainBg.svg": "static/media/mainBg.8a07bca3.svg"
+  "main.css": "/Udacity-FrontEnd-P04-MyReads/static/css/main.7189c593.chunk.css",
+  "main.js": "/Udacity-FrontEnd-P04-MyReads/static/js/main.1e294aae.chunk.js",
+  "main.js.map": "/Udacity-FrontEnd-P04-MyReads/static/js/main.1e294aae.chunk.js.map",
+  "static/js/1.448d8998.chunk.js": "/Udacity-FrontEnd-P04-MyReads/static/js/1.448d8998.chunk.js",
+  "static/js/1.448d8998.chunk.js.map": "/Udacity-FrontEnd-P04-MyReads/static/js/1.448d8998.chunk.js.map",
+  "runtime~main.js": "/Udacity-FrontEnd-P04-MyReads/static/js/runtime~main.c60ff413.js",
+  "runtime~main.js.map": "/Udacity-FrontEnd-P04-MyReads/static/js/runtime~main.c60ff413.js.map",
+  "static/media/char.svg": "/Udacity-FrontEnd-P04-MyReads/static/media/char.9b487253.svg",
+  "static/media/index.css": "/Udacity-FrontEnd-P04-MyReads/static/media/mainBg.8a07bca3.svg",
+  "static/media/bmark.svg": "/Udacity-FrontEnd-P04-MyReads/static/media/bmark.b4604bc2.svg",
+  "static/css/main.7189c593.chunk.css.map": "/Udacity-FrontEnd-P04-MyReads/static/css/main.7189c593.chunk.css.map",
+  "index.html": "/Udacity-FrontEnd-P04-MyReads/index.html",
+  "precache-manifest.6f5c2421bc88ec9462634ac4c77813de.js": "/Udacity-FrontEnd-P04-MyReads/precache-manifest.6f5c2421bc88ec9462634ac4c77813de.js",
+  "service-worker.js": "/Udacity-FrontEnd-P04-MyReads/service-worker.js"
 }
