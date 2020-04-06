@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Udacity-FrontEnd-P04-MyReads/precache-manifest.c15f20adac730fcce647b0aedd4d622d.js"
+  "/Udacity-FrontEnd-P04-MyReads/precache-manifest.58405f4e7a75322ba8934a4419a0d547.js"
 );
 
 workbox.clientsClaim();
@@ -30,5 +30,5 @@ workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
 workbox.routing.registerNavigationRoute("/Udacity-FrontEnd-P04-MyReads/index.html", {
   
-  blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
+  blacklist: [/^\/_/,/\/[^/]+\.[^/]+$/],
 });
