@@ -1,16 +1,25 @@
 {
-  "main.css": "/Udacity-FrontEnd-P04-MyReads/static/css/main.4f8b62af.chunk.css",
-  "main.js": "/Udacity-FrontEnd-P04-MyReads/static/js/main.298e4021.chunk.js",
-  "main.js.map": "/Udacity-FrontEnd-P04-MyReads/static/js/main.298e4021.chunk.js.map",
-  "runtime~main.js": "/Udacity-FrontEnd-P04-MyReads/static/js/runtime~main.d78ab47d.js",
-  "runtime~main.js.map": "/Udacity-FrontEnd-P04-MyReads/static/js/runtime~main.d78ab47d.js.map",
-  "static/js/2.4e3d5b21.chunk.js": "/Udacity-FrontEnd-P04-MyReads/static/js/2.4e3d5b21.chunk.js",
-  "static/js/2.4e3d5b21.chunk.js.map": "/Udacity-FrontEnd-P04-MyReads/static/js/2.4e3d5b21.chunk.js.map",
-  "index.html": "/Udacity-FrontEnd-P04-MyReads/index.html",
-  "precache-manifest.58405f4e7a75322ba8934a4419a0d547.js": "/Udacity-FrontEnd-P04-MyReads/precache-manifest.58405f4e7a75322ba8934a4419a0d547.js",
-  "service-worker.js": "/Udacity-FrontEnd-P04-MyReads/service-worker.js",
-  "static/css/main.4f8b62af.chunk.css.map": "/Udacity-FrontEnd-P04-MyReads/static/css/main.4f8b62af.chunk.css.map",
-  "static/media/index.css": "/Udacity-FrontEnd-P04-MyReads/static/media/mainBg.8a07bca3.svg",
-  "static/media/bmark.svg": "/Udacity-FrontEnd-P04-MyReads/static/media/bmark.b4604bc2.svg",
-  "static/media/char.svg": "/Udacity-FrontEnd-P04-MyReads/static/media/char.9b487253.svg"
+  "files": {
+    "main.css": "/Udacity-FrontEnd-P04-MyReads/static/css/main.27dd6bf4.chunk.css",
+    "main.js": "/Udacity-FrontEnd-P04-MyReads/static/js/main.55d0461c.chunk.js",
+    "main.js.map": "/Udacity-FrontEnd-P04-MyReads/static/js/main.55d0461c.chunk.js.map",
+    "runtime-main.js": "/Udacity-FrontEnd-P04-MyReads/static/js/runtime-main.8d8489bc.js",
+    "runtime-main.js.map": "/Udacity-FrontEnd-P04-MyReads/static/js/runtime-main.8d8489bc.js.map",
+    "static/js/2.ceefffde.chunk.js": "/Udacity-FrontEnd-P04-MyReads/static/js/2.ceefffde.chunk.js",
+    "static/js/2.ceefffde.chunk.js.map": "/Udacity-FrontEnd-P04-MyReads/static/js/2.ceefffde.chunk.js.map",
+    "index.html": "/Udacity-FrontEnd-P04-MyReads/index.html",
+    "precache-manifest.639de66f17dde1e81ffff0eda9005b09.js": "/Udacity-FrontEnd-P04-MyReads/precache-manifest.639de66f17dde1e81ffff0eda9005b09.js",
+    "service-worker.js": "/Udacity-FrontEnd-P04-MyReads/service-worker.js",
+    "static/css/main.27dd6bf4.chunk.css.map": "/Udacity-FrontEnd-P04-MyReads/static/css/main.27dd6bf4.chunk.css.map",
+    "static/js/2.ceefffde.chunk.js.LICENSE.txt": "/Udacity-FrontEnd-P04-MyReads/static/js/2.ceefffde.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/Udacity-FrontEnd-P04-MyReads/static/media/mainBg.8a07bca3.svg",
+    "static/media/bmark.svg": "/Udacity-FrontEnd-P04-MyReads/static/media/bmark.b4604bc2.svg",
+    "static/media/char.svg": "/Udacity-FrontEnd-P04-MyReads/static/media/char.9b487253.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8d8489bc.js",
+    "static/js/2.ceefffde.chunk.js",
+    "static/css/main.27dd6bf4.chunk.css",
+    "static/js/main.55d0461c.chunk.js"
+  ]
 }
